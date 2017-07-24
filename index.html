@@ -284,6 +284,398 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/c++Resume/读取内存地址/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pickTime">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/coco.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/24/c++Resume/读取内存地址/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T22:28:14+08:00">
+                2017-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="title-如何将程序跳转到指定内存地址？"><a href="#title-如何将程序跳转到指定内存地址？" class="headerlink" title="title: 如何将程序跳转到指定内存地址？"></a>title: 如何将程序跳转到指定内存地址？</h2><p>[TOC]</p>
+<h3 id="将程序跳转到指定内存地址"><a href="#将程序跳转到指定内存地址" class="headerlink" title="将程序跳转到指定内存地址"></a>将程序跳转到指定内存地址</h3><p>要对绝对地址0x100000赋值，我们可以用(unsigned int*)0x100000 = 1234;那么要是想让程序跳转到绝对地址是0x100000去执行，应该怎么做？</p>
+<p>　　<em>((void (</em>)( ))0x100000 ) ( );<br>　　首先要将0x100000强制转换成函数指针,即:<br>　　(void (<em>)())0x100000<br>　　然后再调用它:
+　　</em>((void (<em>)())0x100000)();<br>　　用typedef可以看得更直观些:<br>　　typedef void(</em>)() voidFuncPtr;<br>　　*((voidFuncPtr)0x100000)();</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/c++Resume/求数字中1的个数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pickTime">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/coco.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/24/c++Resume/求数字中1的个数/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T22:13:22+08:00">
+                2017-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="title-如何求数字中1的个数？"><a href="#title-如何求数字中1的个数？" class="headerlink" title="title: 如何求数字中1的个数？"></a>title: 如何求数字中1的个数？</h2><blockquote>
+<p>int func(x)<br>{<br>    int countx = 0;<br>    while(x)<br>    {<br>        countx ++;<br>        x = x&amp;(x-1);<br>    }<br>    return countx;<br>} </p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/c++Resume/new与delete/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pickTime">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/coco.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/24/c++Resume/new与delete/" itemprop="url">new 与 delete, malloc 与 free</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T21:12:50+08:00">
+                2017-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>[TOC]</p>
+<h2 id="new-与-delete-malloc-与-free的区别？"><a href="#new-与-delete-malloc-与-free的区别？" class="headerlink" title="new 与 delete, malloc 与 free的区别？"></a>new 与 delete, malloc 与 free的区别？</h2><p>new是调用构造函数创建一个对象<br>delete是调用析构函数</p>
+<p>free 是直接释放内存<br>malloc是申请动态内存</p>
+<h3 id="malloc与free是C-C语言的标准库函数。"><a href="#malloc与free是C-C语言的标准库函数。" class="headerlink" title="malloc与free是C++/C语言的标准库函数。"></a>malloc与free是C++/C语言的标准库函数。</h3><h3 id="new-delete是C-的运算符。"><a href="#new-delete是C-的运算符。" class="headerlink" title="new/delete是C++的运算符。"></a>new/delete是C++的运算符。</h3><p>对于非内部数据类型的对象而言，光用maloc/free无法满足动态对象的要求。<br>对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。<br>由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于malloc/free。</p>
+<h2 id="delete与-delete-区别？"><a href="#delete与-delete-区别？" class="headerlink" title="delete与 delete []区别？"></a>delete与 delete []区别？</h2><p>delete只会调用一次析构函数，而delete[]会调用每一个成员的析构函数。<br>在More Effective C++中有更为详细的解释：“当delete操作符用于数组时，它为每个数组元素调用析构函数，然后调用operator delete来释放内存。”<br>delete与new配套，delete []与new []配套</p>
+<p>delete[]删除一个数组，delete删除一个指针。简单来说，用new分配的内存用delete删除；用new[]分配的内存用delete[]删除。<br>delete[]会调用数组元素的析构函数。内部数据类型没有析构函数，所以问题不大。</p>
+<h3 id="C-有哪些性质（面向对象特点）"><a href="#C-有哪些性质（面向对象特点）" class="headerlink" title="C++有哪些性质（面向对象特点）"></a>C++有哪些性质（面向对象特点）</h3><p>封装，继承和多态。</p>
+<h3 id="子类析构时要调用父类的析构函数吗？"><a href="#子类析构时要调用父类的析构函数吗？" class="headerlink" title="子类析构时要调用父类的析构函数吗？"></a>子类析构时要调用父类的析构函数吗？</h3><p>MY：会，子类析构时先调用自身的析构函数，然后再调用父类的析构函数。<br>析构函数调用的次序是先派生类的析构后基类的析构，也就是说在基类的的析构调用的时候,派生类的信息已经全部销毁了。定义一个对象时先调用基类的构造函数、然后调用派生类的构造函数；析构的时候恰好相反：先调用派生类的析构函数、然后调用基类的析构函数。</p>
+<h3 id="多态，虚函数，纯虚函数"><a href="#多态，虚函数，纯虚函数" class="headerlink" title="多态，虚函数，纯虚函数"></a>多态，虚函数，纯虚函数</h3><h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><h5 id="定义：是对于不同对象接收相同消息时产生不同的动作。“一个接口，多种方法”。"><a href="#定义：是对于不同对象接收相同消息时产生不同的动作。“一个接口，多种方法”。" class="headerlink" title="定义：是对于不同对象接收相同消息时产生不同的动作。“一个接口，多种方法”。"></a>定义：是对于不同对象接收相同消息时产生不同的动作。“一个接口，多种方法”。</h5><h5 id="实现：多态是由c-虚函数来实现的，虚函数允许子类重写"><a href="#实现：多态是由c-虚函数来实现的，虚函数允许子类重写" class="headerlink" title="实现：多态是由c++虚函数来实现的，虚函数允许子类重写"></a>实现：多态是由c++虚函数来实现的，虚函数允许子类重写</h5><h5 id="目的："><a href="#目的：" class="headerlink" title="目的："></a>目的：</h5><p>C++的多态性具体体现在运行和编译两个方面：<br>在程序运行时的多态性通过继承和虚函数来体现；<br>在程序编译时多态性体现在函数和运算符的重载上；</p>
+<h4 id="虚函数：在基类中冠以关键字-virtual-的成员函数。-它提供了一种接口界面。允许在派生类中对基类的虚函数重新定义。"><a href="#虚函数：在基类中冠以关键字-virtual-的成员函数。-它提供了一种接口界面。允许在派生类中对基类的虚函数重新定义。" class="headerlink" title="虚函数：在基类中冠以关键字 virtual 的成员函数。 它提供了一种接口界面。允许在派生类中对基类的虚函数重新定义。"></a>虚函数：在基类中冠以关键字 virtual 的成员函数。 它提供了一种接口界面。允许在派生类中对基类的虚函数重新定义。</h4><h4 id="纯虚函数的作用：纯虚函数是在基类中声明的虚函数，它在基类中没有定义，但要求任何派生类都要定义自己的实现方法。在基类中实现纯虚函数的方法是在函数原型后加“-0”"><a href="#纯虚函数的作用：纯虚函数是在基类中声明的虚函数，它在基类中没有定义，但要求任何派生类都要定义自己的实现方法。在基类中实现纯虚函数的方法是在函数原型后加“-0”" class="headerlink" title="纯虚函数的作用：纯虚函数是在基类中声明的虚函数，它在基类中没有定义，但要求任何派生类都要定义自己的实现方法。在基类中实现纯虚函数的方法是在函数原型后加“=0”;"></a>纯虚函数的作用：纯虚函数是在基类中声明的虚函数，它在基类中没有定义，但要求任何派生类都要定义自己的实现方法。在基类中实现纯虚函数的方法是在函数原型后加“=0”;</h4><p><strong>当函数没有实现方法或者需要子类来定义实现方法的时候，可以在父类中定义纯虚函数。</strong></p>
+<p>在基类中为其派生类保留一个函数的名字，以便派生类根据需要对它进行定义。作为接口而存在 纯虚函数不具备函数的功能，一般不能直接被调用。<br>从基类继承来的纯虚函数，在派生类中仍是虚函数。如果一个类中至少有一个纯虚函数，那么这个类被称为抽象类（abstract class）。<br>抽象类中不仅包括纯虚函数，也可包括虚函数。抽象类必须用作派生其他类的基类，而不能用于直接创建对象实例。但仍可使用指向抽象类的指针支持运行时多态性。</p>
+<h3 id="结构体和共同体的区别。"><a href="#结构体和共同体的区别。" class="headerlink" title="结构体和共同体的区别。"></a>结构体和共同体的区别。</h3><ul>
+<li>结构体struct：把不同类型的数据组合成一个整体，自定义类型。</li>
+<li>共同体union：使几个不同类型的变量共同占用一段内存。</li>
+</ul>
+<p>关于内存对齐，先让我们看四个重要的基本概念：<br>1.数据类型自身的对齐值：<br>对于char型数据，其自身对齐值为1，对于short型为2，对于int,float,double类型，其自身对齐值为4，单位字节。<br>2.结构体或者类的自身对齐值：其成员中自身对齐值最大的那个值。<br>3.指定对齐值：#pragma pack(n)，n=1,2,4,8,16改变系统的对齐系数<br>4.数据成员、结构体和类的有效对齐值：自身对齐值和指定对齐值中小的那个值。<br> 常见数据类型及其长度：</p>
+<p>注意long int和int一样是4byte，long double和double一样是8byte。</p>
+<p>在标准c++中，int的定义长度要依靠你的机器的字长，也就是说，如果你的机器是32位的，int的长度为32位，如果你的机器是64位的，那么int的标准长度就是64位。</p>
+<h3 id="static-和const分别怎么用，类里面static和const可以同时修饰成员函数吗。"><a href="#static-和const分别怎么用，类里面static和const可以同时修饰成员函数吗。" class="headerlink" title="static 和const分别怎么用，类里面static和const可以同时修饰成员函数吗。"></a>static 和const分别怎么用，类里面static和const可以同时修饰成员函数吗。</h3><h4 id="static的作用："><a href="#static的作用：" class="headerlink" title="static的作用："></a>static的作用：</h4><p><strong>对变量：</strong></p>
+<p>1.局部变量：</p>
+<p>在局部变量之前加上关键字static，局部变量就被定义成为一个局部静态变量。</p>
+<p>  1）内存中的位置：静态存储区</p>
+<p>  2）初始化：未经初始化的全局静态变量会被程序自动初始化为0（自动对象的值是任意的，除非他被显示初始化）</p>
+<p>  3）作用域：作用域仍为局部作用域，当定义它的函数或者语句块结束的时候，作用域随之结束。</p>
+<p> 注：当static用来修饰局部变量的时候，它就改变了局部变量的存储位置（从原来的栈中存放改为静态存储区）及其生命周期（局部静态变量在离开作用域之后，并没有被销毁，而是仍然驻留在内存当中，直到程序结束，只不过我们不能再对他进行访问），但未改变其作用域。</p>
+<p>2.全局变量</p>
+<p>在全局变量之前加上关键字static，全局变量就被定义成为一个全局静态变量。</p>
+<p>1）内存中的位置：静态存储区（静态存储区在整个程序运行期间都存在）</p>
+<p>2）初始化：未经初始化的全局静态变量会被程序自动初始化为0（自动对象的值是任意的，除非他被显示初始化）</p>
+<p>3）作用域：全局静态变量在声明他的文件之外是不可见的。准确地讲从定义之处开始到文件结尾。</p>
+<p>注：static修饰全局变量，并为改变其存储位置及生命周期，而是改变了其作用域，使当前文件外的源文件无法访问该变量，好处如下：（1）不会被其他文件所访问，修改（2）其他文件中可以使用相同名字的变量，不会发生冲突。对全局函数也是有隐藏作用。</p>
+<p>对类中的</p>
+<p>　　　　1.成员变量</p>
+<p>　　　　用static修饰类的数据成员实际使其成为类的全局变量，会被类的所有对象共享，包括派生类的对象。因此，static成员必须在类外进行初始化(初始化格式： int base::var=10;)，而不能在构造函数内进行初始化，不过也可以用const修饰static数据成员在类内初始化 。</p>
+<p>　　　　特点：</p>
+<p>不要试图在头文件中定义(初始化)静态数据成员。在大多数的情况下，这样做会引起重复定义这样的错误。即使加上#ifndef #define #endif或者#pragma once也不行。<br>静态数据成员可以成为成员函数的可选参数，而普通数据成员则不可以。<br>静态数据成员的类型可以是所属类的类型，而普通数据成员则不可以。普通数据成员的只能声明为 所属类类型的指针或引用。<br>2.成员函数</p>
+<p>用static修饰成员函数，使这个类只存在这一份函数，所有对象共享该函数，不含this指针。<br>静态成员是可以独立访问的，也就是说，无须创建任何对象实例就可以访问。base::func(5,3);当static成员函数在类外定义时不需要加static修饰符。<br>在静态成员函数的实现中不能直接引用类中说明的非静态成员，可以引用类中说明的静态成员。因为静态成员函数不含this指针。<br>不可以同时用const和static修饰成员函数。</p>
+<p>C++编译器在实现const的成员函数的时候为了确保该函数不能修改类的实例的状态，会在函数中添加一个隐式的参数const this*。但当一个成员为static的时候，该函数是没有this指针的。也就是说此时const的用法和static是冲突的。</p>
+<p>我们也可以这样理解：两者的语意是矛盾的。static的作用是表示该函数只作用在类型的静态变量上，与类的实例没有关系；而const的作用是确保函数不能修改类的实例的状态，与类型的静态变量没有关系。因此不能同时用它们。</p>
+<p>const的作用：</p>
+<p> 1.限定变量为不可修改。</p>
+<p>2.限定成员函数不可以修改任何数据成员。</p>
+<p>3.const与指针：</p>
+<p>const char *p 表示 指向的内容不能改变。</p>
+<p>char * const p，就是将P声明为常指针，它的地址不能改变，是固定的，但是它的内容可以改变。</p>
+<p> 3.指针和引用的区别，引用可以用常指针实现吗。</p>
+<p>本质上的区别是，指针是一个新的变量，只是这个变量存储的是另一个变量的地址，我们通过访问这个地址来修改变量。</p>
+<p>而引用只是一个别名，还是变量本身。对引用进行的任何操作就是对变量本身进行操作，因此以达到修改变量的目的。</p>
+<p>复制代码<br>(1)指针：指针是一个变量，只不过这个变量存储的是一个地址，指向内存的一个存储单元；而引用跟原来的变量实质上是同一个东西，只不过是原变量的一个别名而已。如：<br>int a=1;int <em>p=&a;<br>int a=1;int &amp;b=a;<br>上面定义了一个整形变量和一个指针变量p，该指针变量指向a的存储单元，即p的值是a存储单元的地址。<br>而下面2句定义了一个整形变量a和这个整形a的引用b，事实上a和b是同一个东西，在内存占有同一个存储单元。<br>(2)可以有const指针，但是没有const引用；<br>(3)指针可以有多级，但是引用只能是一级（int *</em>p；合法 而 int &amp;&amp;a是不合法的）<br>(4)指针的值可以为空，但是引用的值不能为NULL，并且引用在定义的时候必须初始化；<br>(5)指针的值在初始化后可以改变，即指向其它的存储单元，而引用在进行初始化后就不会再改变了。<br>(6)”sizeof引用”得到的是所指向的变量(对象)的大小，而”sizeof指针”得到的是指针本身的大小；<br>(7)指针和引用的自增(++)运算意义不一样；<br>复制代码<br>指针传参的时候，还是值传递，试图修改传进来的指针的值是不可以的。只能修改地址所保存变量的值。<br>引用传参的时候，传进来的就是变量本身，因此可以被修改。</p>
+<h3 id="重载与重写"><a href="#重载与重写" class="headerlink" title="重载与重写"></a>重载与重写</h3><p>重载是指函数名相同，但是函数参数个数或者类型不同，但是不能靠返回类型来判断。<br>重写是指返回值、函数名、函数参数 完全相同，但是实现不同。<br>重定义 (redefining)也叫做隐藏:子类重新定义父类中有相同名称的非虚函数 ( 参数列表可以不同 ) 。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/心得/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -353,6 +745,124 @@
         
           
             
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/opencv/minGW/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pickTime">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/coco.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/22/opencv/minGW/" itemprop="url">MinGW连接那些事</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-22T01:39:24+08:00">
+                2017-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="对于libopencv-core249-dll-a，怎么连接呢？"><a href="#对于libopencv-core249-dll-a，怎么连接呢？" class="headerlink" title="对于libopencv_core249.dll.a，怎么连接呢？"></a>对于libopencv_core249.dll.a，怎么连接呢？</h3><p>In MinGW you don’t put the full name of the libraries, the linker will add the extension and the lib prefix. So when you say -llibcurl the linker will look for liblibcurl.a. Just use -lcurl and it will work.</p>
+<p>由上可知，有以下两种方式：</p>
+<ol>
+<li>g++ my.cpp -l opencv_core249</li>
+<li>g++ my.cpp -l opencv_core249.dll</li>
+</ol>
+<p>其实，这两种方法均可以，最好就用第一种了</p>
+
           
         
       
@@ -666,7 +1176,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/归档">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
