@@ -622,16 +622,16 @@
 <p>用static修饰成员函数，使这个类只存在这一份函数，所有对象共享该函数，不含this指针。<br>静态成员是可以独立访问的，也就是说，无须创建任何对象实例就可以访问。base::func(5,3);当static成员函数在类外定义时不需要加static修饰符。<br>在静态成员函数的实现中不能直接引用类中说明的非静态成员，可以引用类中说明的静态成员。因为静态成员函数不含this指针。<br>不可以同时用const和static修饰成员函数。</p>
 <p>C++编译器在实现const的成员函数的时候为了确保该函数不能修改类的实例的状态，会在函数中添加一个隐式的参数const this*。但当一个成员为static的时候，该函数是没有this指针的。也就是说此时const的用法和static是冲突的。</p>
 <p>我们也可以这样理解：两者的语意是矛盾的。static的作用是表示该函数只作用在类型的静态变量上，与类的实例没有关系；而const的作用是确保函数不能修改类的实例的状态，与类型的静态变量没有关系。因此不能同时用它们。</p>
-<p>const的作用：</p>
-<p> 1.限定变量为不可修改。</p>
+<h4 id="const的作用："><a href="#const的作用：" class="headerlink" title="const的作用："></a>const的作用：</h4><p>1.限定变量为不可修改。</p>
 <p>2.限定成员函数不可以修改任何数据成员。</p>
 <p>3.const与指针：</p>
 <p>const char *p 表示 指向的内容不能改变。</p>
 <p>char * const p，就是将P声明为常指针，它的地址不能改变，是固定的，但是它的内容可以改变。</p>
-<p> 3.指针和引用的区别，引用可以用常指针实现吗。</p>
+<p>###　指针和引用的区别，引用可以用常指针实现吗。</p>
 <p>本质上的区别是，指针是一个新的变量，只是这个变量存储的是另一个变量的地址，我们通过访问这个地址来修改变量。</p>
 <p>而引用只是一个别名，还是变量本身。对引用进行的任何操作就是对变量本身进行操作，因此以达到修改变量的目的。</p>
-<p>复制代码<br>(1)指针：指针是一个变量，只不过这个变量存储的是一个地址，指向内存的一个存储单元；而引用跟原来的变量实质上是同一个东西，只不过是原变量的一个别名而已。如：<br>int a=1;int <em>p=&a;<br>int a=1;int &amp;b=a;<br>上面定义了一个整形变量和一个指针变量p，该指针变量指向a的存储单元，即p的值是a存储单元的地址。<br>而下面2句定义了一个整形变量a和这个整形a的引用b，事实上a和b是同一个东西，在内存占有同一个存储单元。<br>(2)可以有const指针，但是没有const引用；<br>(3)指针可以有多级，但是引用只能是一级（int *</em>p；合法 而 int &amp;&amp;a是不合法的）<br>(4)指针的值可以为空，但是引用的值不能为NULL，并且引用在定义的时候必须初始化；<br>(5)指针的值在初始化后可以改变，即指向其它的存储单元，而引用在进行初始化后就不会再改变了。<br>(6)”sizeof引用”得到的是所指向的变量(对象)的大小，而”sizeof指针”得到的是指针本身的大小；<br>(7)指针和引用的自增(++)运算意义不一样；<br>复制代码<br>指针传参的时候，还是值传递，试图修改传进来的指针的值是不可以的。只能修改地址所保存变量的值。<br>引用传参的时候，传进来的就是变量本身，因此可以被修改。</p>
+<p>(1)指针：指针是一个变量，只不过这个变量存储的是一个地址，指向内存的一个存储单元；<br>而引用跟原来的变量实质上是同一个东西，只不过是原变量的一个别名而已。如：<br>int a=1;int <em>p=&a;<br>int a=1;int &amp;b=a;<br>上面定义了一个整形变量和一个指针变量p，该指针变量指向a的存储单元，即p的值是a存储单元的地址。<br>而下面2句定义了一个整形变量a和这个整形a的引用b，事实上a和b是同一个东西，在内存占有同一个存储单元。<br>(2)可以有const指针，但是没有const引用；<br>(3)指针可以有多级，但是引用只能是一级（int *</em>p；合法 而 int &amp;&amp;a是不合法的）<br>(4)指针的值可以为空，但是引用的值不能为NULL，并且引用在定义的时候必须初始化；<br>(5)指针的值在初始化后可以改变，即指向其它的存储单元，而引用在进行初始化后就不会再改变了。<br>(6)”sizeof引用”得到的是所指向的变量(对象)的大小，而”sizeof指针”得到的是指针本身的大小；<br>(7)指针和引用的自增(++)运算意义不一样；</p>
+<p>指针传参的时候，还是值传递，试图修改传进来的指针的值是不可以的。只能修改地址所保存变量的值。<br>引用传参的时候，传进来的就是变量本身，因此可以被修改。</p>
 <h3 id="重载与重写"><a href="#重载与重写" class="headerlink" title="重载与重写"></a>重载与重写</h3><p>重载是指函数名相同，但是函数参数个数或者类型不同，但是不能靠返回类型来判断。<br>重写是指返回值、函数名、函数参数 完全相同，但是实现不同。<br>重定义 (redefining)也叫做隐藏:子类重新定义父类中有相同名称的非虚函数 ( 参数列表可以不同 ) 。</p>
 
           
@@ -787,6 +787,120 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/opencv/opencv install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pickTime">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/coco.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/22/opencv/opencv install/" itemprop="url">opencv2.4.11 + vs2010安装error</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-22T01:39:24+08:00">
+                2017-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>opencv的配置很简单，设置环境变量bin目录<br>include目录<br>lib目录</p>
+<p>最终出现提示少了msvcp120d.dll 与 msvcr120d.dll，注意是d.dll,查看电脑SysWow64目录，发现已经有了msvcpr120.dll 与 msvcr120.dll。</p>
+<p>####怎么解决呢？<br>直接网上下载msvcpr120d.dll 与 msvcr120d.dll，然后放到C:\Windows\SysWOW64目录下。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/opencv/minGW/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -862,120 +976,6 @@
 <li>g++ my.cpp -l opencv_core249.dll</li>
 </ol>
 <p>其实，这两种方法均可以，最好就用第一种了</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/opencv/opencv install/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="pickTime">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/coco.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/22/opencv/opencv install/" itemprop="url">opencv2.4.11 + vs2010安装error</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-22T01:39:24+08:00">
-                2017-07-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>opencv的配置很简单，设置环境变量bin目录<br>include目录<br>lib目录</p>
-<p>最终出现提示少了msvcp120d.dll 与 msvcr120d.dll，注意是d.dll,查看电脑SysWow64目录，发现已经有了msvcpr120.dll 与 msvcr120.dll。</p>
-<p>####怎么解决呢？<br>直接网上下载msvcpr120d.dll 与 msvcr120d.dll，然后放到C:\Windows\SysWOW64目录下。</p>
 
           
         
