@@ -303,7 +303,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/24/c++Resume/读取内存地址/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2017/07/24/c++Resume/读取内存地址/" itemprop="url">指定内存地址</a></h1>
         
 
         <div class="post-meta">
@@ -352,8 +352,7 @@
       
         
           
-            <hr>
-<h2 id="title-跳到指定内存地址"><a href="#title-跳到指定内存地址" class="headerlink" title="title: 跳到指定内存地址"></a>title: 跳到指定内存地址</h2><p>标题不能太长<br>也不能有问号？</p>
+            <p>标题不能太长<br>也不能有问号？</p>
 <h3 id="将程序跳转到指定内存地址"><a href="#将程序跳转到指定内存地址" class="headerlink" title="将程序跳转到指定内存地址"></a>将程序跳转到指定内存地址</h3><p>要对绝对地址0x100000赋值，我们可以用(unsigned int*)0x100000 = 1234;那么要是想让程序跳转到绝对地址是0x100000去执行，应该怎么做？</p>
 <p>　　<em>((void (</em>)( ))0x100000 ) ( );<br>　　首先要将0x100000强制转换成函数指针,即:<br>　　(void (<em>)())0x100000<br>　　然后再调用它:
 　　</em>((void (<em>)())0x100000)();<br>　　用typedef可以看得更直观些:<br>　　typedef void(</em>)() voidFuncPtr;<br>　　*((voidFuncPtr)0x100000)();</p>
@@ -743,7 +742,8 @@
       
         
           
-            
+            <p>知行合一，有些事好像知道了，但是不行动永远不会进一步了解它。</p>
+
           
         
       
