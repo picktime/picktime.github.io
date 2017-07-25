@@ -353,7 +353,7 @@
         
           
             <hr>
-<h2 id="title-程序跳转到指定内存地址"><a href="#title-程序跳转到指定内存地址" class="headerlink" title="title: 程序跳转到指定内存地址"></a>title: 程序跳转到指定内存地址</h2><p>[TOC]</p>
+<h2 id="title-跳到指定内存地址"><a href="#title-跳到指定内存地址" class="headerlink" title="title: 跳到指定内存地址"></a>title: 跳到指定内存地址</h2><p>标题不能太长<br>也不能有问号？</p>
 <h3 id="将程序跳转到指定内存地址"><a href="#将程序跳转到指定内存地址" class="headerlink" title="将程序跳转到指定内存地址"></a>将程序跳转到指定内存地址</h3><p>要对绝对地址0x100000赋值，我们可以用(unsigned int*)0x100000 = 1234;那么要是想让程序跳转到绝对地址是0x100000去执行，应该怎么做？</p>
 <p>　　<em>((void (</em>)( ))0x100000 ) ( );<br>　　首先要将0x100000强制转换成函数指针,即:<br>　　(void (<em>)())0x100000<br>　　然后再调用它:
 　　</em>((void (<em>)())0x100000)();<br>　　用typedef可以看得更直观些:<br>　　typedef void(</em>)() voidFuncPtr;<br>　　*((voidFuncPtr)0x100000)();</p>
@@ -786,120 +786,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/opencv/opencv install/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="pickTime">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/coco.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/22/opencv/opencv install/" itemprop="url">opencv2.4.11 + vs2010安装error</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-22T01:39:24+08:00">
-                2017-07-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>opencv的配置很简单，设置环境变量bin目录<br>include目录<br>lib目录</p>
-<p>最终出现提示少了msvcp120d.dll 与 msvcr120d.dll，注意是d.dll,查看电脑SysWow64目录，发现已经有了msvcpr120.dll 与 msvcr120.dll。</p>
-<p>####怎么解决呢？<br>直接网上下载msvcpr120d.dll 与 msvcr120d.dll，然后放到C:\Windows\SysWOW64目录下。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/opencv/minGW/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -975,6 +861,120 @@
 <li>g++ my.cpp -l opencv_core249.dll</li>
 </ol>
 <p>其实，这两种方法均可以，最好就用第一种了</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/opencv/opencv install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pickTime">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/coco.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/22/opencv/opencv install/" itemprop="url">opencv2.4.11 + vs2010安装error</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-22T01:39:24+08:00">
+                2017-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>opencv的配置很简单，设置环境变量bin目录<br>include目录<br>lib目录</p>
+<p>最终出现提示少了msvcp120d.dll 与 msvcr120d.dll，注意是d.dll,查看电脑SysWow64目录，发现已经有了msvcpr120.dll 与 msvcr120.dll。</p>
+<p>####怎么解决呢？<br>直接网上下载msvcpr120d.dll 与 msvcr120d.dll，然后放到C:\Windows\SysWOW64目录下。</p>
 
           
         

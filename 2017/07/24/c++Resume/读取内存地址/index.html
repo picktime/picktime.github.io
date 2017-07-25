@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="title: 程序跳转到指定内存地址[TOC] 将程序跳转到指定内存地址要对绝对地址0x100000赋值，我们可以用(unsigned int*)0x100000 = 1234;那么要是想让程序跳转到绝对地址是0x100000去执行，应该怎么做？ 　　((void ()( ))0x100000 ) ( );　　首先要将0x100000强制转换成函数指针,即:　　(void ()())0x1000">
+<meta name="description" content="title: 跳到指定内存地址标题不能太长也不能有问号？ 将程序跳转到指定内存地址要对绝对地址0x100000赋值，我们可以用(unsigned int*)0x100000 = 1234;那么要是想让程序跳转到绝对地址是0x100000去执行，应该怎么做？ 　　((void ()( ))0x100000 ) ( );　　首先要将0x100000强制转换成函数指针,即:　　(void ()())0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2017/07/24/c++Resume/读取内存地址/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: 程序跳转到指定内存地址[TOC] 将程序跳转到指定内存地址要对绝对地址0x100000赋值，我们可以用(unsigned int*)0x100000 = 1234;那么要是想让程序跳转到绝对地址是0x100000去执行，应该怎么做？ 　　((void ()( ))0x100000 ) ( );　　首先要将0x100000强制转换成函数指针,即:　　(void ()())0x1000">
+<meta property="og:description" content="title: 跳到指定内存地址标题不能太长也不能有问号？ 将程序跳转到指定内存地址要对绝对地址0x100000赋值，我们可以用(unsigned int*)0x100000 = 1234;那么要是想让程序跳转到绝对地址是0x100000去执行，应该怎么做？ 　　((void ()( ))0x100000 ) ( );　　首先要将0x100000强制转换成函数指针,即:　　(void ()())0">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-25T01:14:31.309Z">
+<meta property="og:updated_time" content="2017-07-25T01:17:09.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title: 程序跳转到指定内存地址[TOC] 将程序跳转到指定内存地址要对绝对地址0x100000赋值，我们可以用(unsigned int*)0x100000 = 1234;那么要是想让程序跳转到绝对地址是0x100000去执行，应该怎么做？ 　　((void ()( ))0x100000 ) ( );　　首先要将0x100000强制转换成函数指针,即:　　(void ()())0x1000">
+<meta name="twitter:description" content="title: 跳到指定内存地址标题不能太长也不能有问号？ 将程序跳转到指定内存地址要对绝对地址0x100000赋值，我们可以用(unsigned int*)0x100000 = 1234;那么要是想让程序跳转到绝对地址是0x100000去执行，应该怎么做？ 　　((void ()( ))0x100000 ) ( );　　首先要将0x100000强制转换成函数指针,即:　　(void ()())0">
 
 
 
@@ -351,7 +351,7 @@
 
       
         <hr>
-<h2 id="title-程序跳转到指定内存地址"><a href="#title-程序跳转到指定内存地址" class="headerlink" title="title: 程序跳转到指定内存地址"></a>title: 程序跳转到指定内存地址</h2><p>[TOC]</p>
+<h2 id="title-跳到指定内存地址"><a href="#title-跳到指定内存地址" class="headerlink" title="title: 跳到指定内存地址"></a>title: 跳到指定内存地址</h2><p>标题不能太长<br>也不能有问号？</p>
 <h3 id="将程序跳转到指定内存地址"><a href="#将程序跳转到指定内存地址" class="headerlink" title="将程序跳转到指定内存地址"></a>将程序跳转到指定内存地址</h3><p>要对绝对地址0x100000赋值，我们可以用(unsigned int*)0x100000 = 1234;那么要是想让程序跳转到绝对地址是0x100000去执行，应该怎么做？</p>
 <p>　　<em>((void (</em>)( ))0x100000 ) ( );<br>　　首先要将0x100000强制转换成函数指针,即:<br>　　(void (<em>)())0x100000<br>　　然后再调用它:
 　　</em>((void (<em>)())0x100000)();<br>　　用typedef可以看得更直观些:<br>　　typedef void(</em>)() voidFuncPtr;<br>　　*((voidFuncPtr)0x100000)();</p>
@@ -511,7 +511,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-程序跳转到指定内存地址"><span class="nav-number">1.</span> <span class="nav-text">title: 程序跳转到指定内存地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将程序跳转到指定内存地址"><span class="nav-number">1.1.</span> <span class="nav-text">将程序跳转到指定内存地址</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title-跳到指定内存地址"><span class="nav-number">1.</span> <span class="nav-text">title: 跳到指定内存地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#将程序跳转到指定内存地址"><span class="nav-number">1.1.</span> <span class="nav-text">将程序跳转到指定内存地址</span></a></li></ol></li></ol></div>
             
 
           </div>
