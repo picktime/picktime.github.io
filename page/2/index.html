@@ -560,7 +560,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/opencv/minGW/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/心得/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pickTime">
@@ -579,7 +579,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/22/opencv/minGW/" itemprop="url">MinGW连接那些事</a></h1>
+                <a class="post-title-link" href="/2017/07/22/心得/" itemprop="url">心得</a></h1>
         
 
         <div class="post-meta">
@@ -628,13 +628,7 @@
       
         
           
-            <h3 id="对于libopencv-core249-dll-a，怎么连接呢？"><a href="#对于libopencv-core249-dll-a，怎么连接呢？" class="headerlink" title="对于libopencv_core249.dll.a，怎么连接呢？"></a>对于libopencv_core249.dll.a，怎么连接呢？</h3><p>In MinGW you don’t put the full name of the libraries, the linker will add the extension and the lib prefix. So when you say -llibcurl the linker will look for liblibcurl.a. Just use -lcurl and it will work.</p>
-<p>由上可知，有以下两种方式：</p>
-<ol>
-<li>g++ my.cpp -l opencv_core249</li>
-<li>g++ my.cpp -l opencv_core249.dll</li>
-</ol>
-<p>其实，这两种方法均可以，最好就用第一种了</p>
+            <p>知行合一，有些事好像知道了，但是不行动永远不会进一步了解它。</p>
 
           
         
@@ -792,7 +786,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/心得/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/opencv/minGW/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pickTime">
@@ -811,7 +805,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/22/心得/" itemprop="url">心得</a></h1>
+                <a class="post-title-link" href="/2017/07/22/opencv/minGW/" itemprop="url">MinGW连接那些事</a></h1>
         
 
         <div class="post-meta">
@@ -860,7 +854,13 @@
       
         
           
-            <p>知行合一，有些事好像知道了，但是不行动永远不会进一步了解它。</p>
+            <h3 id="对于libopencv-core249-dll-a，怎么连接呢？"><a href="#对于libopencv-core249-dll-a，怎么连接呢？" class="headerlink" title="对于libopencv_core249.dll.a，怎么连接呢？"></a>对于libopencv_core249.dll.a，怎么连接呢？</h3><p>In MinGW you don’t put the full name of the libraries, the linker will add the extension and the lib prefix. So when you say -llibcurl the linker will look for liblibcurl.a. Just use -lcurl and it will work.</p>
+<p>由上可知，有以下两种方式：</p>
+<ol>
+<li>g++ my.cpp -l opencv_core249</li>
+<li>g++ my.cpp -l opencv_core249.dll</li>
+</ol>
+<p>其实，这两种方法均可以，最好就用第一种了</p>
 
           
         

@@ -93,14 +93,17 @@
 
 
 
+<meta name="description" content="如何获取字符的长度？头文件：#include 在C语言中，与strlen函数不同的是，sizeof不是一个函数，而是判断数据类型或者表达式长度符的关键字，也可以说是C/C++中的一个操作符（operator），其作用就是返回一个对象或者类型所占的内存字节数。注意：字节数的计算在程序编译时进行，而不是在程序执行的过程中才计算出来!  数组的sizeof值等于数组所占用的内存字节数，如： char">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="C++需要记住的几点">
 <meta property="og:url" content="http://yoursite.com/2017/08/12/Code/Remember/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="如何获取字符的长度？头文件：#include 在C语言中，与strlen函数不同的是，sizeof不是一个函数，而是判断数据类型或者表达式长度符的关键字，也可以说是C/C++中的一个操作符（operator），其作用就是返回一个对象或者类型所占的内存字节数。注意：字节数的计算在程序编译时进行，而不是在程序执行的过程中才计算出来!  数组的sizeof值等于数组所占用的内存字节数，如： char">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-12T02:32:04.999Z">
+<meta property="og:updated_time" content="2017-08-13T08:32:24.158Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="C++需要记住的几点">
+<meta name="twitter:description" content="如何获取字符的长度？头文件：#include 在C语言中，与strlen函数不同的是，sizeof不是一个函数，而是判断数据类型或者表达式长度符的关键字，也可以说是C/C++中的一个操作符（operator），其作用就是返回一个对象或者类型所占的内存字节数。注意：字节数的计算在程序编译时进行，而不是在程序执行的过程中才计算出来!  数组的sizeof值等于数组所占用的内存字节数，如： char">
 
 
 
@@ -134,7 +137,7 @@
 
 
 
-  <title> | Hexo</title>
+  <title>C++需要记住的几点 | Hexo</title>
   
 
 
@@ -300,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">C++需要记住的几点</h1>
         
 
         <div class="post-meta">
@@ -347,7 +350,13 @@
       
 
       
-        
+        <ol>
+<li>如何获取字符的长度？<br><strong>头文件：#include <string.h></string.h></strong><br>在C语言中，与strlen函数不同的是，sizeof不是一个函数，而是判断数据类型或者表达式长度符的关键字，也可以说是C/C++中的一个操作符（operator），其作用就是返回一个对象或者类型所占的内存字节数。<br>注意：字节数的计算在程序编译时进行，而不是在程序执行的过程中才计算出来!</li>
+</ol>
+<p>数组的sizeof值等于数组所占用的内存字节数，如：<br> char a1[] = “abc”;<br> int a2[3];<br> sizeof( a1 ); // 结果为4，字符末尾还存在一个NULL终止符<br> sizeof( a2 ); // 结果为3*4=12（依赖于int）</p>
+<p>那么如何求数组中元素的个数呢？（以下两种方式是等价的）<br>int c1=sizeof(a1)/sizeof(char);//总长度/单个元素的长度  char型<br>int c2=sizeof(a2)/sizeof(a2[0]);//总长度/第一个元素的长度 int型</p>
+<p>2.先算术运算，后移位运算，最后位运算。请特别注意：1 &lt;&lt; 3 + 2 &amp; 7等价于 (1 &lt;&lt; (3 + 2))&amp;7.<br>i &lt; length-cnt 等同于 i &lt; （length-cnt）</p>
+
       
     </div>
 
